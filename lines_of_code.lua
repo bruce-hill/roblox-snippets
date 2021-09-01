@@ -4,7 +4,7 @@ return "Count Lines", "Count the lines of code in this project", function()
 		for _,desc in ipairs(root:GetDescendants()) do
 			if desc:IsA("ModuleScript") or desc:IsA("LocalScript") or desc:IsA("Script") then
 				for line in desc.Source:gmatch("[^\r\n]+") do
-					if not line:match("^%s*$") and not line:match("^%s*--") then count += 1 end
+					if not line:match("^%s*$") and not line:match("^%s*%-%-") then count += 1 end
 				end
 			end
 		end
